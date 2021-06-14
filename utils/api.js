@@ -1,5 +1,4 @@
 import { AsyncStorage } from "react-native";
-import decks from "../reducers";
 
 const STORAGE_KEY = "CARDS_DATA";
 
@@ -42,7 +41,6 @@ export async function getDeck(id) {
   try {
     deck = getDecks().then((decks) => {
       decks = JSON.parse(decks);
-      console.log(decks[id], "gotten");
       return decks[id];
     });
   } catch (err) {
